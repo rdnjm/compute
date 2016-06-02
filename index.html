@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Compute</title>
+	</head>
+	<body>
+		<input type='number' id='bayad'>
+		<button onclick='compute();'>Compute</button>
+
+		<br>
+		<br>
+		Tithes & Offering (15%): <input type='number' id='tithes' readonly>
+		<br>
+		Mom: <input type='number' id='mom' readonly>
+		<br>
+		pldt: <input type='number' id='pldt' value='2899' readonly>
+		<br>
+		<br>
+	
+		Total: <input type='number' id='pera' readonly>
+	</body>
+
+	<script type="text/javascript" src='js/jquery.js'></script>
+	<script type="text/javascript">
+		function compute(){
+			var total = document.getElementById('bayad').value;
+			var tithes = total * .15;
+			var mom = total * .2;
+			var pldt = document.getElementById('pldt').value;
+			total -= (tithes + mom + parseInt(pldt));
+			document.getElementById('tithes').value = tithes;
+			document.getElementById('mom').value = mom;
+			document.getElementById('pera').value = total;
+		}
+	</script>
+</html>
